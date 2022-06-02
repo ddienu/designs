@@ -19,6 +19,7 @@ class BotonesPage extends StatelessWidget {
             child: Column(
               children:[
               _titulos(),
+              _botonesRedondeados(),
               ],
             ), 
           ),
@@ -113,4 +114,59 @@ class BotonesPage extends StatelessWidget {
       ),
     );
    }
+   
+    Widget  _botonesRedondeados() {
+      return Table(
+        children: [
+          TableRow(
+            children: [
+              _crearBotonRedondeados(),
+              _crearBotonRedondeados(),
+            ],
+          ),
+          TableRow(
+            children: [
+              _crearBotonRedondeados(),
+              _crearBotonRedondeados(),
+            ],
+          ),
+          TableRow(
+            children: [
+              _crearBotonRedondeados(),
+              _crearBotonRedondeados(),
+            ],
+          ),
+          TableRow(
+            children: [
+              _crearBotonRedondeados(),
+              _crearBotonRedondeados(),
+            ],
+          ),
+        ],
+      );
+    }
+    
+      Widget _crearBotonRedondeados() {
+        return Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(62, 66, 107, 0.7),
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              SizedBox(height: 5.0),
+              CircleAvatar(
+                child: Icon( Icons.accessibility_outlined),
+                radius: 30.0,
+                backgroundColor: Colors.pinkAccent,
+              ),
+              Text('Icon Name', style: TextStyle(color: Colors.pinkAccent,)),
+              SizedBox(height: 5.0),
+            ],
+          ),
+        );
+      }
 }
