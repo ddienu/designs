@@ -120,52 +120,57 @@ class BotonesPage extends StatelessWidget {
         children: [
           TableRow(
             children: [
-              _crearBotonRedondeados(),
-              _crearBotonRedondeados(),
+              _crearBotonRedondeados(Colors.blue, Icons.handshake, 'Hello'),
+              _crearBotonRedondeados(Colors.pinkAccent, Icons.border_all, 'General'),
             ],
           ),
           TableRow(
             children: [
-              _crearBotonRedondeados(),
-              _crearBotonRedondeados(),
+              _crearBotonRedondeados(Colors.red, Icons.business, 'Business'),
+              _crearBotonRedondeados(Colors.orange, Icons.shop_two_rounded, 'Shop'),
             ],
           ),
           TableRow(
             children: [
-              _crearBotonRedondeados(),
-              _crearBotonRedondeados(),
+              _crearBotonRedondeados(Colors.blue, Icons.movie_filter_rounded, 'Entertaiment'),
+              _crearBotonRedondeados(Colors.green, Icons.local_grocery_store, 'Grocery'),
             ],
           ),
           TableRow(
             children: [
-              _crearBotonRedondeados(),
-              _crearBotonRedondeados(),
+              _crearBotonRedondeados(Colors.deepOrange, Icons.image, 'Images'),
+              _crearBotonRedondeados(Colors.deepPurple, Icons.help_center, 'Contact'),
             ],
           ),
         ],
       );
     }
     
-      Widget _crearBotonRedondeados() {
-        return Container(
-          height: 180.0,
-          margin: EdgeInsets.all(15.0),
-          decoration: BoxDecoration(
-            color: Color.fromRGBO(62, 66, 107, 0.7),
-            borderRadius: BorderRadius.circular(20.0),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              SizedBox(height: 5.0),
-              CircleAvatar(
-                child: Icon( Icons.accessibility_outlined),
-                radius: 30.0,
-                backgroundColor: Colors.pinkAccent,
-              ),
-              Text('Icon Name', style: TextStyle(color: Colors.pinkAccent,)),
-              SizedBox(height: 5.0),
-            ],
+      Widget _crearBotonRedondeados(Color color, IconData icono, String texto) {
+
+
+        return BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
+          child: Container(
+            height: 180.0,
+            margin: EdgeInsets.all(15.0),
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(62, 66, 107, 0.7),
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(height: 5.0),
+                CircleAvatar(
+                  child: Icon( Icons.accessibility_outlined),
+                  radius: 30.0,
+                  backgroundColor: Colors.pinkAccent,
+                ),
+                Text('Icon Name', style: TextStyle(color: Colors.pinkAccent,)),
+                SizedBox(height: 5.0),
+              ],
+            ),
           ),
         );
       }
